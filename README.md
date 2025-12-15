@@ -70,7 +70,7 @@ Pour tester les différentes interfaces :
 *   **Visiteur** : Accès libre à `/esport`.
 *   **Admin** : Se connecter via `/auth/login`.
     *   Email : `admin@velito.fr`
-    *   Password : `admin`
+    *   Password : `admiine`
 
 ---
 
