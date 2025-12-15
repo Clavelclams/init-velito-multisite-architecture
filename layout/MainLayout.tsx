@@ -21,8 +21,13 @@ const MainLayout: React.FC = () => {
                {/* VENA Branding (Left Column) */}
                <div className="flex flex-col items-center md:items-start gap-4 max-w-sm">
                   <Link to="/vena" className="group flex items-center gap-3 transition-opacity hover:opacity-90">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 border border-emerald-500/20 shadow-lg shadow-emerald-900/20 group-hover:bg-emerald-500/20 transition-all">
-                        <Zap size={24} fill="currentColor" className="text-emerald-500" />
+                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 shadow-lg shadow-emerald-900/20 group-hover:bg-emerald-500/20 transition-all p-1.5 overflow-hidden">
+                        {/* Using VENA Logo (Sans Texte) for Icon slot */}
+                        <img 
+                          src="logo/png/vena/VENA_LOGO_BLANC_SANS.png" 
+                          alt="VENA Logo" 
+                          className="w-full h-full object-contain" 
+                        />
                     </div>
                     <div className="text-left">
                         <h2 className="text-2xl font-bold text-white leading-none tracking-tight">VENA</h2>
