@@ -27,7 +27,8 @@ const MODULES: Record<string, ModuleConfig> = {
     key: 'esport',
     name: 'VELITO',
     sub: 'ESPORT AMIENS',
-    icon: <Gamepad2 size={28} />,
+    // Using image logo for VEA
+    icon: <img src="logo/png/vea/LOGO%201.png" alt="VEA" className="w-full h-full object-contain drop-shadow-md" />,
     colors: {
       primary: 'text-blue-500',
       bg: 'bg-blue-500/10',
@@ -51,7 +52,8 @@ const MODULES: Record<string, ModuleConfig> = {
     key: 'vena',
     name: 'VENA',
     sub: 'STUDIO CRÉATIF',
-    icon: <Zap size={28} />,
+    // Using image logo for VENA (Sans texte version)
+    icon: <img src="logo/png/vena/VENA_LOGO_BLANC_SANS.png" alt="VENA" className="w-full h-full object-contain drop-shadow-md" />,
     colors: {
       primary: 'text-emerald-500',
       bg: 'bg-emerald-500/10',
@@ -195,7 +197,7 @@ const MainNavbar: React.FC = () => {
           
           {/* === DYNAMIC MODULE IDENTITY === */}
           <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onClick={() => navigate(currentModule.links[0]?.path || '/')}>
-             <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-105 ${theme.bg} ${theme.primary} border border-slate-700/50`}>
+             <div className={`w-12 h-12 rounded-xl flex items-center justify-center p-1.5 shadow-lg transition-transform group-hover:scale-105 ${theme.bg} border ${theme.border} overflow-hidden`}>
                {currentModule.icon}
              </div>
              <div className="hidden md:block">
