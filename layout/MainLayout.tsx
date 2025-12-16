@@ -3,6 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import { Zap } from 'lucide-react';
 import TopEcosystemBar from './TopEcosystemBar';
 import MainNavbar from './MainNavbar';
+import venaLogo from "../src/logo/png/vena/VENA_LOGO_BLANC_SANS.png";
 
 const MainLayout: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ const MainLayout: React.FC = () => {
                     <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 shadow-lg shadow-emerald-900/20 group-hover:bg-emerald-500/20 transition-all p-1.5 overflow-hidden">
                         {/* Using VENA Logo (Sans Texte) for Icon slot */}
                         <img 
-                          src="logo/png/vena/VENA_LOGO_BLANC_SANS.png" 
+                          src={venaLogo} 
                           alt="VENA Logo" 
                           className="w-full h-full object-contain" 
                         />

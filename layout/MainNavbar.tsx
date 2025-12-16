@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, User as UserIcon, LayoutDashboard, Gamepad2, Zap, Cpu, MapPin, MessageSquare, MonitorPlay, Layers } from 'lucide-react';
+import veaLogo from "../src/logo/png/vea/LOGO 1.png";
+import venaLogo from "../src/logo/png/vena/VENA_LOGO_BLANC_SANS.png";
 
 // --- TYPES & CONFIGURATION ---
 
@@ -28,7 +30,7 @@ const MODULES: Record<string, ModuleConfig> = {
     name: 'VELITO',
     sub: 'ESPORT AMIENS',
     // Using image logo for VEA
-    icon: <img src="logo/png/vea/LOGO%201.png" alt="VEA" className="w-full h-full object-contain drop-shadow-md" />,
+    icon: <img src={veaLogo} alt="VEA" className="w-full h-full object-contain drop-shadow-md" />,
     colors: {
       primary: 'text-blue-500',
       bg: 'bg-blue-500/10',
@@ -53,7 +55,7 @@ const MODULES: Record<string, ModuleConfig> = {
     name: 'VENA',
     sub: 'STUDIO CRÉATIF',
     // Using image logo for VENA (Sans texte version)
-    icon: <img src="logo/png/vena/VENA_LOGO_BLANC_SANS.png" alt="VENA" className="w-full h-full object-contain drop-shadow-md" />,
+    icon: <img src={venaLogo} alt="VENA" className="w-full h-full object-contain drop-shadow-md" />,
     colors: {
       primary: 'text-emerald-500',
       bg: 'bg-emerald-500/10',
