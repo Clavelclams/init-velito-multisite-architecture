@@ -52,25 +52,37 @@ L'objectif est de centraliser plusieurs entités sous une même bannière techni
     *   Les liens du menu.
 *   **Footer Stratégique** : Le footer rappelle la hiérarchie en mettant en avant **VENA** comme l'entreprise porteuse de l'écosystème, quel que soit le module visité.
 
-## 🏃‍♂️ Démarrage
+## 🚀 Déploiement
 
-1.  Installer les dépendances :
-    ```bash
-    npm install
-    ```
-2.  Lancer le serveur de développement :
-    ```bash
-    npm start
-    ```
+Ce projet est configuré pour un déploiement SPA (Single Page Application) sur des plateformes comme Netlify ou Vercel.
 
-## 🔐 Accès Démo
+### Configuration Routing
+- **Netlify** : Le fichier `public/_redirects` redirige toutes les routes vers `index.html` pour le routing côté client.
+- **Vercel** : Le fichier `vercel.json` configure les rewrites pour servir `index.html` sur toutes les routes.
 
-Pour tester les différentes interfaces :
+### Base Path
+Par défaut, déployé à la racine (`/`). Si nécessaire pour un sous-chemin, modifier `vite.config.ts` :
+```typescript
+export default defineConfig({
+  base: '/mon-chemin/',
+  // ...
+});
+```
 
-*   **Visiteur** : Accès libre à `/esport`.
-*   **Admin** : Se connecter via `/auth/login`.
-    *   Email : `admin@velito.fr`
-    *   Password : `admiine`
+### Limites en Production
+⚠️ **Ce projet est une démonstration technique** et présente plusieurs limitations pour un environnement de production réel :
+
+- **Authentification** : Utilise `localStorage` uniquement (pas de JWT, OAuth, ou backend sécurisé). Les sessions ne persistent pas réellement.
+- **Base de Données** : Toutes les données sont mockées dans `services/cms.ts` (pas de vraie BDD). Les formulaires simulent l'envoi sans traitement réel.
+- **Sécurité** : Aucune validation côté serveur, protection CSRF, ou chiffrement des données sensibles.
+- **Performance** : Pas d'optimisation avancée (code-splitting partiel, lazy loading limité).
+- **Évolutivité** : Architecture monorepo conceptuelle, mais pas adaptée à une vraie séparation de services.
+
+Pour une mise en production réelle, il faudrait :
+- Intégrer un backend (Node.js/Express, Next.js API, ou service externe).
+- Configurer une vraie BDD (PostgreSQL, MongoDB).
+- Implémenter une authentification sécurisée (Auth0, Firebase Auth).
+- Ajouter des tests automatisés et monitoring.
 
 ---
 

@@ -42,7 +42,7 @@ const Medias: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
            {[1,2,3,4,5,6,7,8].map(i => (
              <img 
-               key={i} 
+               key={`gal-${i}`} 
                src={`https://picsum.photos/seed/gal${i}/400/400`} 
                alt="Gallery" 
                className="rounded-2xl hover:opacity-80 transition-opacity cursor-pointer border border-slate-800"

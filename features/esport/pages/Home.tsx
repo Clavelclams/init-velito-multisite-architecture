@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                 { icon: Trophy, title: "Compétition", desc: "Des équipes performantes sur 5 jeux." },
                 { icon: Zap, title: "Insertion", desc: "Des parcours innovants vers l'emploi." }
               ].map((feat, idx) => (
-                <div key={idx} className="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-blue-500/30 transition-colors">
+                <div key={feat.title} className="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-blue-500/30 transition-colors">
                    <feat.icon className="w-12 h-12 text-blue-500 mb-6" />
                    <h3 className="text-2xl font-bold text-white mb-3">{feat.title}</h3>
                    <p className="text-slate-400">{feat.desc}</p>

@@ -5,6 +5,9 @@ const interestsList = [
   'Esport (VEA)', 'VENA', 'Interactive', 'Plateforme', 'Ma Ville', 'Hub IA', 'Messages'
 ];
 
+// Note: This is a demo form. In production, this would connect to a real user registration backend.
+// Currently simulates registration using localStorage for demonstration purposes only.
+
 const Register: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({

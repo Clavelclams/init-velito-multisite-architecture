@@ -10,7 +10,7 @@ const Competition: React.FC = () => {
 
       {/* Game Sections */}
       {['League of Legends', 'Valorant', 'Rocket League', 'FC 24'].map((game, idx) => (
-        <div key={idx} className="mb-16">
+        <div key={game} className="mb-16">
            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
              <span className="w-1.5 h-8 bg-blue-500 rounded-full"></span>
              {game}

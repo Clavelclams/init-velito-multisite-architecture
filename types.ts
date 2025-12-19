@@ -7,7 +7,6 @@ export interface EcosystemModule {
   id: string;
   name: string;
   path: string;
-  isActive: boolean;
 }
 
 export interface Event {

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
+// Note: This contact form is purely visual and not connected to any backend.
+// In production, this would submit to a contact form handler or API.
+
 const Contact: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
@@ -52,8 +55,8 @@ const Contact: React.FC = () => {
                  <label className="block text-sm text-slate-400 mb-1">Message</label>
                  <textarea rows={4} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-2 text-white focus:border-blue-500 focus:outline-none"></textarea>
               </div>
-              <button className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-500 transition-colors">
-                Envoyer le message
+              <button className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-500 transition-colors" disabled>
+                Formulaire de démonstration (non fonctionnel)
               </button>
            </div>
         </form>

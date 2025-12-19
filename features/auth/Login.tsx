@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+// Note: This is a demo form. In production, this would connect to a real authentication backend.
+// Currently simulates login using localStorage for demonstration purposes only.
+
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');

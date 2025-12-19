@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import { Zap } from 'lucide-react';
 import TopEcosystemBar from './TopEcosystemBar';
 import MainNavbar from './MainNavbar';
-import venaLogo from "../src/logo/png/vena/VENA_LOGO_BLANC_SANS.png";
+import venaLogo from "../src/logo/png/vena/vena_logo_blanc_sans.png";
 
 const MainLayout: React.FC = () => {
   return (

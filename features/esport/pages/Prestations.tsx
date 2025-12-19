@@ -7,6 +7,9 @@ const audiences = [
   "Collectivités", "Centres Sociaux", "MJC", "Écoles & Collèges", "Lycées", "Foyers Jeunes", "Entreprises", "Événements Publics"
 ];
 
+// Note: This is a demo form. In production, this would connect to a real quote submission backend.
+// Currently simulates quote submission with a mock service for demonstration purposes only.
+
 const Prestations: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -78,9 +81,9 @@ const Prestations: React.FC = () => {
         <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mb-6">
           <CheckCircle size={40} />
         </div>
-        <h2 className="text-3xl font-bold text-white mb-4">Demande envoyée !</h2>
+        <h2 className="text-3xl font-bold text-white mb-4">Simulation d'envoi terminée</h2>
         <p className="text-slate-400 max-w-md mb-8">
-          Merci pour votre intérêt. Notre équipe va étudier votre demande et vous recontactera sous 48h pour un devis précis.
+          Ceci est une démonstration. Dans un environnement réel, votre demande serait traitée et vous seriez recontacté sous 48h.
         </p>
         <button 
           onClick={() => setSubmitSuccess(false)}
@@ -137,14 +140,14 @@ const Prestations: React.FC = () => {
                  
                  <div className="mb-8 space-y-2">
                     {service.priceDetails.map((price, idx) => (
-                      <div key={idx} className="text-white font-bold text-xl">{price}</div>
+                      <div key={`price-${idx}`} className="text-white font-bold text-xl">{price}</div>
                     ))}
                     <div className="text-xs text-slate-500 uppercase font-medium mt-1">{service.duration}</div>
                  </div>
 
                  <ul className="space-y-4 mb-8 flex-grow">
                    {service.features.map((feat, idx) => (
-                     <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm">
+                     <li key={`feat-${idx}`} className="flex items-start gap-3 text-slate-300 text-sm">
                         <CheckCircle size={18} className={`${colors.text} flex-shrink-0 mt-0.5`} />
                         {feat}
                      </li>
@@ -181,7 +184,7 @@ const Prestations: React.FC = () => {
             <h2 className="text-2xl font-bold text-white mb-8">Nous intervenons auprès de</h2>
             <div className="flex flex-wrap justify-center gap-4">
                {audiences.map((aud, i) => (
-                 <div key={i} className="flex items-center gap-2 px-5 py-3 bg-slate-900 border border-slate-700 rounded-xl text-slate-300 font-medium hover:border-blue-500 transition-colors">
+                 <div key={aud} className="flex items-center gap-2 px-5 py-3 bg-slate-900 border border-slate-700 rounded-xl text-slate-300 font-medium hover:border-blue-500 transition-colors">
                    <Building2 size={16} className="text-slate-500"/>
                    {aud}
                  </div>
@@ -199,7 +202,7 @@ const Prestations: React.FC = () => {
              { icon: Send, title: "3. Devis", desc: "Envoi sous 48h" },
              { icon: Calendar, title: "4. Intervention", desc: "Jour J avec nos équipes" },
            ].map((step, idx) => (
-             <div key={idx} className="text-center">
+             <div key={step.title} className="text-center">
                 <div className="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-blue-500 mb-4 border border-slate-700">
                    <step.icon size={20} />
                 </div>

@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
           { title: 'Médias', icon: Image, count: 156, color: 'bg-pink-500' },
           { title: 'Paramètres Site', icon: Settings, count: null, color: 'bg-slate-500' },
         ].map((item, idx) => (
-          <div key={idx} className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 hover:bg-slate-800 transition-colors cursor-pointer group">
+          <div key={item.title} className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 hover:bg-slate-800 transition-colors cursor-pointer group">
             <div className="flex items-center justify-between mb-4">
               <div className={`p-3 rounded-xl ${item.color} bg-opacity-20 text-white`}>
                 <item.icon className="w-6 h-6" />

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, User as UserIcon, LayoutDashboard, Gamepad2, Zap, Cpu, MapPin, MessageSquare, MonitorPlay, Layers } from 'lucide-react';
-import veaLogo from "../src/logo/png/vea/LOGO 1.png";
-import venaLogo from "../src/logo/png/vena/VENA_LOGO_BLANC_SANS.png";
+import veaLogo from "../src/logo/png/vea/logo_1.png";
+import venaLogo from "../src/logo/png/vena/vena_logo_blanc_sans.png";
 
 // --- TYPES & CONFIGURATION ---
 
@@ -19,7 +19,7 @@ interface ModuleConfig {
     border: string; // Border color
     button: string; // CTA Button color
   };
-  links: { label: string; path: string; highlight?: boolean }[];
+  links: { id: string; label: string; path: string; highlight?: boolean }[];
   cta?: { label: string; path: string };
 }
 
@@ -38,15 +38,15 @@ const MODULES: Record<string, ModuleConfig> = {
       button: 'bg-blue-600 hover:bg-blue-500',
     },
     links: [
-      { label: 'Accueil', path: '/esport' },
-      { label: 'Association', path: '/esport/association' },
-      { label: 'Projets', path: '/esport/projets' },
-      { label: 'Esport', path: '/esport/competition' },
-      { label: 'Agenda', path: '/esport/agenda' },
-      { label: 'Médias', path: '/esport/medias' },
-      { label: 'Partenaires', path: '/esport/partenaires' },
-      { label: 'Prestations', path: '/esport/prestations', highlight: true },
-      { label: 'Contact', path: '/esport/contact' },
+      { id: 'accueil', label: 'Accueil', path: '/esport' },
+      { id: 'association', label: 'Association', path: '/esport/association' },
+      { id: 'projets', label: 'Projets', path: '/esport/projets' },
+      { id: 'competition', label: 'Esport', path: '/esport/competition' },
+      { id: 'agenda', label: 'Agenda', path: '/esport/agenda' },
+      { id: 'medias', label: 'Médias', path: '/esport/medias' },
+      { id: 'partenaires', label: 'Partenaires', path: '/esport/partenaires' },
+      { id: 'prestations', label: 'Prestations', path: '/esport/prestations', highlight: true },
+      { id: 'contact', label: 'Contact', path: '/esport/contact' },
     ],
     cta: { label: 'Adhérer', path: '/esport/adherer' }
   },
@@ -63,8 +63,8 @@ const MODULES: Record<string, ModuleConfig> = {
       button: 'bg-emerald-600 hover:bg-emerald-500',
     },
     links: [
-      { label: 'Présentation', path: '/vena' },
-      { label: 'Contact', path: '/vena' }, // Redirects to coming soon for now
+      { id: 'presentation', label: 'Présentation', path: '/vena' },
+      { id: 'contact', label: 'Contact', path: '/vena/contact' }, // Redirects to coming soon for now
     ],
     cta: { label: 'Nous découvrir', path: '/vena' }
   },
@@ -80,7 +80,7 @@ const MODULES: Record<string, ModuleConfig> = {
       button: 'bg-pink-600 hover:bg-pink-500',
     },
     links: [
-      { label: 'Expériences', path: '/interactive' },
+      { id: 'experiences', label: 'Expériences', path: '/interactive' },
     ]
   },
   plateforme: {
@@ -95,7 +95,7 @@ const MODULES: Record<string, ModuleConfig> = {
       button: 'bg-amber-600 hover:bg-amber-500',
     },
     links: [
-      { label: 'Solutions', path: '/plateforme' },
+      { id: 'solutions', label: 'Solutions', path: '/plateforme' },
     ]
   },
   maville: {
@@ -110,7 +110,7 @@ const MODULES: Record<string, ModuleConfig> = {
       button: 'bg-orange-600 hover:bg-orange-500',
     },
     links: [
-      { label: 'Le Concept', path: '/maville' },
+      { id: 'concept', label: 'Le Concept', path: '/maville' },
     ]
   },
   hub: {
@@ -125,7 +125,7 @@ const MODULES: Record<string, ModuleConfig> = {
       button: 'bg-cyan-600 hover:bg-cyan-500',
     },
     links: [
-      { label: 'Recherche', path: '/hub' },
+      { id: 'recherche', label: 'Recherche', path: '/hub' },
     ]
   },
   messages: {
@@ -212,7 +212,7 @@ const MainNavbar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-1">
             {currentModule.links.map((link) => (
               <NavLink
-                key={link.path}
+                key={link.id}
                 to={link.path}
                 end={link.path === `/${currentModule.key}`}
                 className={({ isActive }) => `
@@ -310,7 +310,7 @@ const MainNavbar: React.FC = () => {
             
             {currentModule.links.map((link) => (
               <NavLink
-                key={link.path}
+                key={link.id}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={({ isActive }) => `

@@ -25,7 +25,7 @@ const Join: React.FC = () => {
                  'Participation aux tournois internes',
                  'Vote aux Assemblées Générales'
                ].map((item, i) => (
-                 <li key={i} className="flex items-center gap-3 text-slate-300">
+                 <li key={item} className="flex items-center gap-3 text-slate-300">
                     <CheckCircle className="text-blue-500 flex-shrink-0" size={20} />
                     {item}
                  </li>

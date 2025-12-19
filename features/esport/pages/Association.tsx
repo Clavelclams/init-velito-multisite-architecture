@@ -41,7 +41,7 @@ const Association: React.FC = () => {
           <h2 className="text-2xl font-bold text-white mb-8 text-center">L'Équipe Dirigeante</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="text-center">
+                <div key={`staff-${i}`} className="text-center">
                    <img src={`https://picsum.photos/seed/staff${i}/300/300`} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-slate-800" alt="Staff" />
                    <h4 className="text-white font-bold">Membre {i}</h4>
                    <p className="text-sm text-slate-500">Fonction</p>
